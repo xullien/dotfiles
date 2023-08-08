@@ -1,0 +1,30 @@
+include $HOME/.config/i3/themes/dracula
+include $HOME/.config/i3/conf/scratchpad
+include $HOME/.config/i3/conf/baseconf
+include $HOME/.config/i3/conf/custconf
+include $HOME/.config/i3/conf/barconf
+include $HOME/.config/i3/conf/workspace
+
+set $mod Mod4
+
+font pango:monospace 8
+
+# gaps I guess
+smart_gaps on
+smart_borders on 
+gaps inner 6
+gaps outer 1
+
+
+#calculator
+bindsym $mod+Shift+i exec --no-startup-id rofi -show calc
+
+# bindsym XF86Favorites exec --no-startup-id st
+
+#bindcode --release 156 exec --no-startup-id st 
+
+#dunst
+exec --no-startup-id dunst
+
+# auto tiling
+exec_always --no-startup-id autotiling

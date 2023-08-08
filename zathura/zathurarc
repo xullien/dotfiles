@@ -1,0 +1,11 @@
+set window-title-basename "true"
+set selection-clipboard "clipboard"
+include themes/catppuccin-mocha
+# include themes/dracula
+
+
+#
+# Startup options
+#
+set adjust-open width
+set recolor true

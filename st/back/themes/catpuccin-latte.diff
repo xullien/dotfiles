@@ -1,0 +1,82 @@
+diff '--color=auto' -up ../st/config.def.h ./config.def.h
+--- ../st/config.def.h	2022-03-09 08:28:40.186246176 -0300
++++ ./config.def.h	2022-03-09 08:26:03.194323581 -0300
+@@ -95,27 +95,29 @@ unsigned int tabspaces = 8;
+ 
+ /* Terminal colors (16 first used in escape sequence) */
+ static const char *colorname[] = {
+-	/* 8 normal colors */
+-	"black",
+-	"red3",
+-	"green3",
+-	"yellow3",
+-	"blue2",
+-	"magenta3",
+-	"cyan3",
+-	"gray90",
+-
+-	/* 8 bright colors */
+-	"gray50",
+-	"red",
+-	"green",
+-	"yellow",
+-	"#5c5cff",
+-	"magenta",
+-	"cyan",
+-	"white",
+-
+-	[255] = 0,
++    /* 8 normal colors */
++    [0] = "#5C5F77", /* black   */
++    [1] = "#D20F39", /* red     */
++    [2] = "#40A02B", /* green   */
++    [3] = "#DF8E1D", /* yellow  */
++    [4] = "#1E66F5", /* blue    */
++    [5] = "#EA76CB", /* magenta */
++    [6] = "#179299", /* cyan    */
++    [7] = "#ACB0BE", /* white   */
++                                  
++    /* 8 bright colors */
++    [8]  = "#6C6F85", /* black   */
++    [9]  = "#D20F39", /* red     */
++    [10] = "#40A02B", /* green   */
++    [11] = "#DF8E1D", /* yellow  */
++    [12] = "#1E66F5", /* blue    */
++    [13] = "#EA76CB", /* magenta */
++    [14] = "#179299", /* cyan    */
++    [15] = "#BCC0CC", /* white   */
++                                   
++    /* special colors */
++    [256] = "#EFF1F5", /* background */
++    [257] = "#4C4F69", /* foreground */
+ 
+ 	/* more colors can be added after 255 to use with DefaultXX */
+ 	"#DC8A78",
+@@ -127,14 +129,22 @@ static const char *colorname[] = {
+ 
+ /*
+  * Default colors (colorname index)
+- * foreground, background, cursor, reverse cursor
++ * foreground, background, cursor
+  */
+-unsigned int defaultfg = 258;
+-unsigned int defaultbg = 259;
+-unsigned int defaultcs = 256;
++unsigned int defaultfg = 257;
++unsigned int defaultbg = 256;
++unsigned int defaultcs = 257;
+ static unsigned int defaultrcs = 257;
+ 
+ /*
++ * Colors used, when the specific fg == defaultfg. So in reverse mode this
++ * will reverse too. Another logic would only make the simple feature too
++ * complex.
++ */
++unsigned int defaultitalic = 7;
++unsigned int defaultunderline = 7;
++
++/*
+  * Default shape of cursor
+  * 2: Block ("█")
+  * 4: Underline ("_")
+

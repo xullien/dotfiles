@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+# echo $(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
+DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
+
+rm -rf $HOME/.zshrc
+ln -s $DOTFILES/zsh/zshrc $HOME/.zshrc
+
+rm -rf $HOME/.config/st
+ln -s $DOTFILES/st/st $HOME/.config/st
+
+rm -rf $HOME/.config/nvim
+ln -s $DOTFILES/nvim $HOME/.config/nvim
+
+rm -rf $HOME/.config/tmux
+ln -s $DOTFILES/tmux $HOME/.config/tmux
+
+rm -rf $HOME/.config/dunst
+ln -s $DOTFILES/dunst $HOME/.config/dunst
+
+rm -rf $HOME/.config/i3
+ln -s $DOTFILES/i3 $HOME/.config/i3
+
+rm -rf $HOME/.config/i3blocks
+ln -s $DOTFILES/i3blocks $HOME/.config/i3blocks
+
+rm -rf $HOME/.config/neofetch
+ln -s $DOTFILES/neofetch $HOME/.config/neofetch
+
+rm -rf $HOME/.config/picom
+ln -s $DOTFILES/picom $HOME/.config/picom
+
+rm -rf $HOME/.config/qutebrowser
+ln -s $DOTFILES/qutebrowser $HOME/.config/qutebrowser
+
+rm -rf $HOME/.config/rofi
+ln -s $DOTFILES/rofi $HOME/.config/rofi
+
+rm -rf $HOME/.config/zathura
+ln -s $DOTFILES/zathura $HOME/.config/zathura
+
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi

@@ -1,0 +1,25 @@
+# Start a scratchpad with kitty and ranger
+#exec --no-startup-id xterm --name=ranger_scratchpad -e ranger
+#exec --no-startup-id xterm --name=btop_scratchpad -e btop
+# exec_always --no-startup-id st --name=dropdown
+exec --no-startup-id kclock
+ 
+## Make the scratchpad initially hidden
+# for_window [instance="ranger_scratchpad"] floating enable, move scratchpad
+# for_window [instance="btop_scratchpad"] floating enable, move scratchpad
+for_window [instance="copyq"] floating enable, move scratchpad
+for_window [instance="easyeffects"] floating enable, move scratchpad
+for_window [instance="plexamp"] move scratchpad
+for_window [instance="kclock"] move scratchpad
+# for_window [instance="dropdown"] floating enable
+
+# Toggle the ranger scratchpad with $mod+n
+#bindsym $mod+n [instance="ranger_scratchpad"] scratchpad show, resize set 800 600, move position center
+#bindsym $mod+m [instance="btop_scratchpad"] scratchpad show, resize set 800 600,  move position center
+bindsym $mod+mod1+shift+c [instance="copyq"] scratchpad show, resize set 800 600,  move position center
+bindsym $mod+mod1+shift+m [instance="easyeffects"] scratchpad show, resize set 800 600,  move position center
+bindsym mod1+shift+p [instance="plexamp"] scratchpad show
+bindsym mod1+shift+c [instance="kclock"] scratchpad show, resize set 800 600, move position center
+# bindym XF86Favorites [instance="st-256color"] scratchpad show, move position center
+bindsym XF86Favorites exec --no-startup-id tdrop -a st 
+# bindsym XF86Favorites [instance="dropdown"] scratchpad show 

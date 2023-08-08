@@ -1,0 +1,157 @@
+# i3blocks config file
+#
+# Global properties
+#
+# Change $SCRIPT_DIR to the location of your scripts!
+command=$SCRIPT_DIR/$BLOCK_NAME
+markup=pango
+separator_block_width=0
+align=center
+separator=false
+full_text="<span font-family='Source Code Pro' bgcolor='#282A36' size='16000'>  </span>"
+
+# ----------------------------------
+# Separator
+# ----------------------------------
+[separator]
+# full_text="<span font-family='Terminus' bgcolor='#282A36' fgcolor='#44475A' size='16000'></span>"
+full_text="<span font-family='Terminus' bgcolor='#1e1e2e' fgcolor='#44475A' size='16000'></span>"
+# full_text="<span font-family='Terminus' bgcolor='#3c3836' fgcolor='#666666' size='16000'></span>"
+
+# ----------------------------------
+# Bandwidth
+# ----------------------------------
+[bandwidth]
+command=$SCRIPT_DIR/bandwidth/bandwidth
+background=#44475A
+# background=#44475A
+# background=#666666
+interval=5
+
+[separator]
+# full_text="<span font-family='Terminus' bgcolor='#44475A' fgcolor='#282A36' size='16000'></span>"
+full_text="<span font-family='Terminus' bgcolor='#44475A' fgcolor='#1e1e2e' size='16000'></span>"
+# full_text="<span font-family='Terminus' bgcolor='#666666' fgcolor='#3c3836' size='16000'></span>"
+
+# ----------------------------------
+# Disk usage
+# ----------------------------------
+[disk]
+command=$SCRIPT_DIR/disk/disk
+label= 
+interval=30
+
+[separator]
+# full_text="<span font-family='Terminus' bgcolor='#282A36' fgcolor='#44475A' size='16000'></span>"
+full_text="<span font-family='Terminus' bgcolor='#1e1e2e' fgcolor='#44475A' size='16000'></span>"
+# full_text="<span font-family='Terminus' bgcolor='#3c3836' fgcolor='#666666' size='16000'></span>"
+
+# ----------------------------------
+# Memory usage
+# ----------------------------------
+[memory]
+command=$SCRIPT_DIR/memory/memory
+label= 
+separator=false
+interval=3
+background=#44475A
+# background=#44475A
+# background=#666666
+
+[separator]
+# full_text="<span font-family='Terminus' bgcolor='#44475A' fgcolor='#282A36' size='16000'></span>"
+full_text="<span font-family='Terminus' bgcolor='#44475A' fgcolor='#1e1e2e' size='16000'></span>"
+# full_text="<span font-family='Terminus' bgcolor='#666666' fgcolor='#3c3836' size='16000'></span>"
+
+# ----------------------------------
+# CPU usage
+# ----------------------------------
+[cpu_usage]
+command=$SCRIPT_DIR/cpu_usage/cpu_usage
+label= 
+interval=10
+# background=#3c3836
+
+[separator]
+# full_text="<span font-family='Terminus' bgcolor='#282A36' fgcolor='#44475A' size='16000'></span>"
+full_text="<span font-family='Terminus' bgcolor='#1e1e2e' fgcolor='#44475A' size='16000'></span>"
+# full_text="<span font-family='Terminus' bgcolor='#3c3836' fgcolor='#666666' size='16000'></span>"
+
+# ----------------------------------
+# Volume
+# ----------------------------------
+[volume]
+command=$SCRIPT_DIR/volume/volume
+interval=once
+signal=10
+background=#44475A
+# background=#44475A
+# background=#666666
+
+[separator]
+# full_text="<span font-family='Terminus' bgcolor='#44475A' fgcolor='#282A36' size='16000'></span>"
+full_text="<span font-family='Terminus' bgcolor='#44475A' fgcolor='#1e1e2e' size='16000'></span>"
+# full_text="<span font-family='Terminus' bgcolor='#666666' fgcolor='#3c3836' size='16000'></span>"
+
+# ----------------------------------
+# Weather
+# ----------------------------------
+[openweather]
+command=$SCRIPT_DIR/openweather/openweather6.py
+interval=60
+#background=#44475A
+#
+[separator]
+# full_text="<span font-family='Terminus' bgcolor='#282A36' fgcolor='#44475A' size='16000'></span>"
+full_text="<span font-family='Terminus' bgcolor='#1e1e2e' fgcolor='#44475A' size='16000'></span>"
+# full_text="<span font-family='Terminus' bgcolor='#3c3836' fgcolor='#666666' size='16000'></span>"
+
+# ----------------------------------
+# Calendar
+# ----------------------------------
+[calendar]
+command=$SCRIPT_DIR/calendar/calendar
+interval=1
+LABEL= 
+HEIGHT=200
+WIDTH=220
+background=#44475A
+# background=#44475A
+# background=#666666
+
+[separator]
+# full_text="<span font-family='Terminus' bgcolor='#44475A' fgcolor='#282A36' size='16000'></span>"
+full_text="<span font-family='Terminus' bgcolor='#44475A' fgcolor='#1e1e2e' size='16000'></span>"
+# full_text="<span font-family='Terminus' bgcolor='#666666' fgcolor='#3c3836' size='16000'></span>"
+
+# ----------------------------------
+# Battery indicator
+# ----------------------------------
+[battery]
+command=$SCRIPT_DIR/battery2/battery2
+# background=#44475A
+interval=30
+
+
+[separator]
+# full_text="<span font-family='Terminus' bgcolor='#282A36' fgcolor='#BD93F9' size='16000'></span>"
+full_text="<span font-family='Terminus' bgcolor='#1e1e2e' fgcolor='#cba6f7' size='16000'></span>"
+# full_text="<span font-family='Terminus' bgcolor='#3c3836' fgcolor='#458588' size='16000'></span>"
+
+# ----------------------------------
+# Shutdown menu
+# ----------------------------------
+[shutdown_menu]
+full_text= 
+color=#1e1e2e
+# background=#BD93F9
+background=#cba6f7
+# background=#458588
+command=$SCRIPT_DIR/shutdown_menu/shutdown_menu
+ENABLE_CONFIRMATIONS=true (must be true or false)
+
+[separator]
+# full_text="<span font-family='Terminus' bgcolor='#BD93F9' fgcolor='#282A36' size='16000'></span>"
+full_text="<span font-family='Terminus' bgcolor='#cba6f7' fgcolor='#1e1e2e' size='16000'></span>"
+# full_text="<span font-family='Terminus' bgcolor='#458588' fgcolor='#3c3836' size='16000'></span>"
+

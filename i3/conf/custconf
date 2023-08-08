@@ -1,0 +1,73 @@
+## Screenshots
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/Screenshots/$(date)"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/Screenshots/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/Screenshots/$(date)"
+
+## Clipboard Screenshots
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+# bindsym $mod+Shift+s exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym $mod+Shift+s exec --no-startup-id ~/.tmp/bash/ss.sh
+
+# numlock on boot
+exec --no-startup-id numlockx on
+
+# blueman blueman-manager
+# exec --no-startup-id blueman-manager
+
+#telegram
+bindsym $mod+t exec --no-startup-id telegram-desktop
+# bindsym $mod+t exec --no-startup-id org.telegram.desktop
+
+#Picom compositor
+exec --no-startup-id picom
+
+#fusuma
+exec --no-startup-id fusuma
+
+#xprop
+#exec_always --no-startup-id xprop
+
+#border
+for_window [class="^.*"] border pixel 1
+
+#browser
+bindsym $mod+w exec --no-startup-id firefox
+#bindsym $mod+w exec --no-startup-id microsoft-edge-stable
+
+#nitrogen
+exec --no-startup-id nitrogen --restore
+
+#ranger
+#bindsym $mod+e exec --no-startup-id st -e ranger
+
+#Pantheon files
+#bindsym $mod+e exec --no-startup-id io.elementary.files
+
+#nemo
+
+bindsym $mod+e exec --no-startup-id nemo
+
+
+#udiskie
+exec --no-startup-id udiskie
+
+#pulseaudio equalizer
+# exec --no-startup-id pulseaudio-equalizer-gtk enable
+# bindsym $mod+Mod1+e exec --no-startup-id pulseaudio-equalizer-gtk
+
+# screen brightness hotkeys
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+
+#copyq
+exec --no-startup-id copyq
+
+# plexamp
+bindsym mod1+shift+slash exec --no-startup-id com.plexamp.Plexamp
+
+#playerctl
+# Play/Pause
+bindsym mod1+slash exec --no-startup-id playerctl play-pause
+bindsym mod1+less exec --no-startup-id playerctl previous
+bindsym mod1+greater exec --no-startup-id playerctl next

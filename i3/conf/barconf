@@ -1,0 +1,59 @@
+
+include $HOME/.config/i3/conf/catppuccin-mocha
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+
+  # catppuccin
+	colors {
+    background #1E1E2E
+    statusline #CDD6F4
+   	separator  #313244
+
+   	focused_workspace  #313244 #313244 #F8F8F2
+   	active_workspace   #1e1e2e #313244 #F8F8F2
+    inactive_workspace #1e1e2e #1e1e2e #BFBFBF
+    urgent_workspace   #f38ba8 #f38ba8 #F8F8F2
+    binding_mode       #f38ba8 #f38ba8 #F8F8F2
+	}
+ #  # dracula
+	# colors {
+ #    background #282A36
+ #    statusline #F8F8F2
+ #   	separator  #44475A
+ #
+ #   	focused_workspace  #44475A #44475A #F8F8F2
+ #   	active_workspace   #282A36 #44475A #F8F8F2
+ #    inactive_workspace #282A36 #282A36 #BFBFBF
+ #    urgent_workspace   #FF5555 #FF5555 #F8F8F2
+ #    binding_mode       #FF5555 #FF5555 #F8F8F2
+	# }
+  # gruvbox
+  # colors{
+  #   background #3c3836
+		# statusline #ebdbb2
+		# separator  #666666
+		# 		 
+		# focused_workspace  #458588 #458588 #ebdbb2
+		# active_workspace   #83a598 #83a598 #ebdbb2
+		# inactive_workspace #504945 #504945 #ebdbb2
+		# urgent_workspace   #cc241d #cc241d #504945
+  # }
+  # monokai
+  # colors {
+  #   background #26292C
+  #   statusline #eaf2f1
+  #  	separator  #26292C
+  #   
+  #  	focused_workspace  #fd971f #fd971f #26292C
+  #  	active_workspace   #26292C #44475A #eaf2f1
+  #   inactive_workspace #26292C #26292C #BFBFBF
+  #   urgent_workspace   #e95678 #e95678 #eaf2f1
+  #   binding_mode       #e95678 #e95678 #eaf2f1
+  # }
+	font pango: FiraCode, Nerd Font, Font Awesome 6 Free 10
+	status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
+	separator_symbol "<200b>"
+
+
+}

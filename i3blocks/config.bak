@@ -1,0 +1,249 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+#
+#full_text=/
+markup=pango
+full_text="<span font-family='Source Code Pro' size='16000'>  </span>"
+separator_block_width=0
+align=center
+separator=false
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+# Change $SCRIPT_DIR to the location of your scripts!
+command=$SCRIPT_DIR/$BLOCK_NAME
+#separator_block_width=10
+#markup=pango
+
+# Volume indicator
+#
+# The first parameter sets the step (and units to display)
+# The second parameter overrides the mixer selection
+# See the script for details.
+# Current weather
+#
+# The script may be called with -s (for short input), -f (for input in farenheit) and -c (to specify city) switches,
+# see the script for details.
+#
+
+# [mediaplayer]
+# command=$SCRIPT_DIR/mediaplayer/mediaplayer
+# instance=plexamp
+# interval=5
+# signal=10
+
+# [playerctl]
+# command=$SCRIPT_DIR/playerctl/playerctl
+# interval=5
+# separator=false
+
+#BAR_POSITION=top
+#FONT=Monospace 10
+#LABEL=🌡️
+#LOCATION=Washington_DC
+#ROFI_CONFIG_FILE=/dev/null
+[separator]
+full_text="<span font-family='Terminus' bgcolor='#282A36' fgcolor='#44475A' size='16000'></span>"
+
+[openweather]
+command=$SCRIPT_DIR/openweather/openweather6.py
+interval=60
+background=#44475A
+
+
+#[weather]
+#command=$SCRIPT_DIR/i3blocks-weather/weather.py 
+#interval=3600
+
+[separator]
+full_text="<span font-family='Terminus' bgcolor='#44475A' fgcolor='#282A36' size='16000'></span>"
+[volume]
+#label=♪ 
+#command=$SCRIPT_DIR/volume/volume
+command=$SCRIPT_DIR/volume/volume
+#label=VOL
+interval=5
+signal=10
+#STEP=5%
+
+[separator]
+full_text="<span font-family='Terminus' bgcolor='#282A36' fgcolor='#44475A' size='16000'></span>"
+
+# Memory usage
+#
+# The type defaults to "mem" if the instance is not specified.
+[memory]
+command=$SCRIPT_DIR/memory/memory
+label= 
+separator=false
+interval=3
+background=#44475A
+
+#[memory]
+#label=SWAP
+#instance=swap
+#separator=false
+#interval=30
+[separator]
+full_text="<span font-family='Terminus' bgcolor='#44475A' fgcolor='#282A36' size='16000'></span>"
+
+# Disk usage
+#
+# The directory defaults to $HOME if the instance is not specified.
+# The script may be called with a optional argument to set the alert
+# (defaults to 10 for 10%).
+[disk]
+command=$SCRIPT_DIR/disk/disk
+label= 
+#DIR=/mnt/data
+interval=30
+
+# Network interface monitoring
+#
+# If the instance is not specified, use the interface used for default route.
+# The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
+#[iface]
+#IFACE=wlan0
+#color=#00FF00
+#interval=10
+#separator=false
+
+#[wifi]
+#INTERFACE=wlp3s0
+#label=wifi:
+#interval=10
+#separator=false
+[separator]
+full_text="<span font-family='Terminus' bgcolor='#282A36' fgcolor='#44475A' size='16000'></span>"
+
+[bandwidth]
+command=$SCRIPT_DIR/bandwidth/bandwidth
+background=#44475A
+#INTERFACE=eth0
+interval=5
+#
+[separator]
+full_text="<span font-family='Terminus' bgcolor='#44475A' fgcolor='#282A36' size='16000'></span>"
+
+# CPU usage
+#
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+[cpu_usage]
+command=$SCRIPT_DIR/cpu_usage/cpu_usage
+label= 
+interval=10
+#min_width=CPU 100.00%
+#separator=false
+
+#[load_average]
+#label=LOAD
+#interval=10
+[separator]
+full_text="<span font-family='Terminus' bgcolor='#282A36' fgcolor='#44475A' size='16000'></span>"
+
+# Battery indicator
+#
+# The battery instance defaults to 0.
+[battery]
+command=$SCRIPT_DIR/battery2/battery2
+background=#44475A
+#label=BAT
+#label=⚡
+interval=30
+#BAT_NUMBER=0
+#
+
+
+# Date Time
+#
+#[time]
+#command=date '+%Y-%m-%d %H:%M'
+#interval=5
+[separator]
+full_text="<span font-family='Terminus' bgcolor='#44475A' fgcolor='#282A36' size='16000'></span>"
+
+[calendar]
+command=$SCRIPT_DIR/calendar/calendar
+interval=1
+LABEL= 
+HEIGHT=200
+WIDTH=220
+[separator]
+
+full_text="<span font-family='Terminus' bgcolor='#282A36' fgcolor='#BD93F9' size='16000'></span>"
+[shutdown_menu]
+full_text=
+background=#BD93F9
+command=$SCRIPT_DIR/shutdown_menu/shutdown_menu
+#ROFI_TEXT=Menu:
+#ROFI_OPTIONS=-location 5 -width 5000
+ENABLE_CONFIRMATIONS=true (must be true or false)
+#LOCKSCRIPT=i3lock --color=${BG_COLOR#"#"}
+#
+[separator]
+full_text="<span font-family='Terminus' bgcolor='#BD93F9' fgcolor='#282A36' size='16000'></span>"
+# Generic media player support
+#
+# This displays "ARTIST - SONG" if a music is playing.
+# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
+# Set to %any to automatically pick (Requires playerctl >=2.1.1)
+#[mediaplayer]
+# This picks any player, with vlc as first, and spotify as last choice
+#instance=vlc,%any,spotify
+#interval=5
+#signal=10
+
+# OpenVPN support
+#
+# Support multiple VPN, with colors.
+#[openvpn]
+#interval=20
+
+# Temperature
+#
+# Support multiple chips, though lm-sensors.
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+#[temperature]
+#label=TEMP
+#interval=10
+
+# Key indicators
+#
+# Add the following bindings to i3 config file:
+#
+# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+#[keyindicator]
+#KEY=CAPS
+#markup=pango
+#interval=once
+#signal=11
+
+#[keyindicator]
+#KEY=NUM
+#markup=pango
+#interval=once
+#signal=11
