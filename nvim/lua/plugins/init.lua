@@ -208,10 +208,16 @@ local plugins = {
     },
 
     -- Allow plugins to enable repeating of commands
-    "tpope/vim-repeat",
+    {
+        "tpope/vim-repeat",
+        event = {"BufNewFile", "BufReadPre"},
+    },
 
     -- Indent autodetection with editorconfig support
-    "tpope/vim-sleuth",
+    {
+        "tpope/vim-sleuth",
+        event = {"BufNewFile", "BufReadPre"},
+    },
 
     -- Add more language support
     {
@@ -356,6 +362,21 @@ local plugins = {
         "aserowy/tmux.nvim",
         event = "VeryLazy",
         config = function() return require("tmux").setup() end,
+    },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
     },
 }
 
