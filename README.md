@@ -13,4 +13,3 @@ My personal dotfiles. It's a mess, but it's mine.
 * [st](https://st.suckless.org/) it just works like I want
 * [tmux](https://github.com/tmux/tmux) few custom keybinds
 * [Zathura](https://github.com/pwmt/zathura) just color scheme
-* [zsh](https://github.com/ohmyzsh/ohmyzsh) just simple zsh config with aliases

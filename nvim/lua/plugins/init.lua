@@ -215,8 +215,8 @@ local plugins = {
 
     -- Add more language support
     {
-        "sheerun/vim-polyglot",
-         event = "VeryLazy",
+        'jwalton512/vim-blade',
+        ft = "blade",
     },
 
     -- Enale * searching with visually selected text
@@ -324,10 +324,10 @@ local plugins = {
             vim.keymap.set('n', '<leader>pn', ':PhpactorClassNew<CR>')
         end,
     },
-    {
-        "github/copilot.vim", 
-        event = {"BufNewFile", "BufReadPre"},
-    },
+    -- {
+    --     "github/copilot.vim", 
+    --     event = {"BufNewFile", "BufReadPre"},
+    -- },
     {
         'kevinhwang91/nvim-ufo',
         event = 'VeryLazy',
@@ -339,6 +339,23 @@ local plugins = {
             --     end})
             require("plugins.configs.ufo")
         end,
+    },
+    {
+        "nvim-neorg/neorg",
+        -- build = ":Neorg sync-parsers",
+        build = ":au BufReadPre,BufNewFile *.norg setfiletype norg", -- This is the important bit!
+        -- event = "VeryLazy",
+        cmd = "Neorg",
+        ft = "norg",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require("plugins.configs.neorg")
+        end,
+    },
+    {
+        "aserowy/tmux.nvim",
+        event = "VeryLazy",
+        config = function() return require("tmux").setup() end,
     },
 }
 

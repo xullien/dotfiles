@@ -73,3 +73,5 @@ map("n", "<leader>/", function()
 end)
 
 map("v", "<leader>/", "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>")
+
+map("n", "<leader>np", "<cmd> Neorg <CR>")
