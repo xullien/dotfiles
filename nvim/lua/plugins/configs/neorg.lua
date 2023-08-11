@@ -2,7 +2,6 @@ require('neorg').setup {
     load = {
         ["core.defaults"] = {},
         ["core.ui"] = {},
-        ["core.itero"] = {},
         ["core.concealer"] = {
             config = {
                 icon_preset = "varied",
@@ -108,4 +107,4 @@ require('neorg').setup {
     }
 }
 
-vim.g.polyglot_disabled = {'ftdetect'}
+vim.wo.conceallevel = 2
