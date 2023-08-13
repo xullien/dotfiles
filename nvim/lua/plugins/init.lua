@@ -378,6 +378,10 @@ local plugins = {
     --         "rcarriga/nvim-notify",
     --     }
     -- },
+    {
+        'chrisbra/csv.vim',
+        ft= 'csv',
+    },
 }
 
 require("lazy").setup(plugins, require("plugins.configs.lazy"))

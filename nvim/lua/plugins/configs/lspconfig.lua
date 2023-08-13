@@ -113,23 +113,23 @@ vim.fn.sign_define('DiagnosticSignWarn', { text = '', texthl = 'DiagnosticSig
 vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo' })
 vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
 
-local  lspconfig = require'lspconfig'
-local configs = require 'lspconfig.configs'
-
+-- local  lspconfig = require'lspconfig'
+-- local configs = require 'lspconfig.configs'
+--
 -- Configure it
-configs.blade = {
-  default_config = {
-    -- Path to the executable: laravel-dev-generators
-    cmd = { "/home/kala/Downloads/laravel-dev-tools", "lsp" },
-    filetypes = {'blade'};
-    root_dir = function(fname)
-      return lspconfig.util.find_git_ancestor(fname)
-    end;
-    settings = {};
-  };
-}
--- Set it up
-lspconfig.blade.setup{
-  -- Capabilities is specific to my setup.
-  capabilities = capabilities
-}
+-- configs.blade = {
+--   default_config = {
+--     -- Path to the executable: laravel-dev-generators
+--     cmd = { "/home/kala/Downloads/laravel-dev-tools", "lsp" },
+--     filetypes = {'blade'};
+--     root_dir = function(fname)
+--       return lspconfig.util.find_git_ancestor(fname)
+--     end;
+--     settings = {};
+--   };
+-- }
+-- -- Set it up
+-- lspconfig.blade.setup{
+--   -- Capabilities is specific to my setup.
+--   capabilities = capabilities
+-- }

@@ -2,6 +2,7 @@ require('neorg').setup {
     load = {
         ["core.defaults"] = {},
         ["core.ui"] = {},
+        ["core.summary"] = {},
         ["core.concealer"] = {
             config = {
                 icon_preset = "varied",
@@ -47,6 +48,7 @@ require('neorg').setup {
                     work = "~/notes/work",
                     ideas = "~/notes/ideas",
                     notes = "~/notes",
+                    Massy = "~/notes/work/Massy",
                 },
                 default_workspace = "notes"
             }
