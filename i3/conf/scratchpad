@@ -22,4 +22,5 @@ bindsym mod1+shift+p [instance="plexamp"] scratchpad show
 bindsym mod1+shift+c [instance="kclock"] scratchpad show, resize set 800 600, move position center
 # bindym XF86Favorites [instance="st-256color"] scratchpad show, move position center
 bindsym XF86Favorites exec --no-startup-id tdrop -a st 
+bindsym XF86Calculator exec --no-startup-id galculator
 # bindsym XF86Favorites [instance="dropdown"] scratchpad show 

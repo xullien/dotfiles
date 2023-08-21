@@ -7,7 +7,8 @@ bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/Scr
 bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 # bindsym $mod+Shift+s exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
-bindsym $mod+Shift+s exec --no-startup-id ~/.tmp/bash/ss.sh
+# bindsym $mod+Shift+s exec --no-startup-id ~/.tmp/bash/ss.sh
+bindsym $mod+Shift+s exec --no-startup-id flameshot gui
 
 # numlock on boot
 exec --no-startup-id numlockx on
@@ -71,3 +72,9 @@ bindsym mod1+shift+slash exec --no-startup-id com.plexamp.Plexamp
 bindsym mod1+slash exec --no-startup-id playerctl play-pause
 bindsym mod1+less exec --no-startup-id playerctl previous
 bindsym mod1+greater exec --no-startup-id playerctl next
+
+# Define a shell script to handle tmux session creation or attachment
+set $tmux_session "st tmux a ||st tmux"
+
+# Keybinding to open tmux session
+bindsym $mod+z exec --no-startup-id $tmux_session

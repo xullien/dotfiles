@@ -16,3 +16,4 @@ for_window [class="Blueman-manager" instance="blueman-manager"] floating enable,
 for_window [class="Lua5.1" instance="lua5.1"] floating enable, move position center  
 for_window [class="Skype" instance="skype"] floating enable
 for_window [class="kclock" instance="kclock"] floating enable, move position center  
+for_window [class="Galculator" instance="galculator"] floating enable, move position center  

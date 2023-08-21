@@ -3,10 +3,10 @@ local opt = vim.opt
 vim.g.mapleader = " "
 
 -- Change tab to spaces
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
+opt.expandtab = true
+opt.shiftwidth = 4
+opt.tabstop = 4
+opt.softtabstop = 4
 
 opt.laststatus = 3 -- global statusline
 opt.showmode = false
