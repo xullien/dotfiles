@@ -62,21 +62,9 @@ local plugins = {
             require("mini.statusline").setup({ set_vim_settings = false })
         end,
     },
-
-    -- mini stuff that are fun to look at 
-    -- {
-    --     'echasnovski/mini.animate', 
-    --     event = "VeryLazy",
-    --     version = false ,
-    --     config = function()
-    --         require('mini.animate').setup()
-    --     end,
-    --
-    -- },
-
     { 
         'echasnovski/mini.cursorword', 
-        event = "VeryLazy",
+        event = {"BufReadPre", "BufNewFile"},
         version = false,
         config = function()
             require('mini.cursorword').setup()
@@ -85,7 +73,7 @@ local plugins = {
 
     { 
         'echasnovski/mini.indentscope', 
-        event = "VeryLazy",
+        event = {"BufReadPre", "BufNewFile"},
         version = false,
         config = function()
             require('mini.indentscope').setup()
@@ -93,7 +81,7 @@ local plugins = {
     },
     { 
         'echasnovski/mini.move', 
-        event = "VeryLazy",
+        event = {"BufReadPre", "BufNewFile"},
         version = false,
         config = function()
             require('mini.move').setup()
@@ -101,7 +89,7 @@ local plugins = {
     },
     { 
         'echasnovski/mini.pairs', 
-        event = "VeryLazy",
+        event = {"BufReadPre", "BufNewFile"},
         version = false,
         config = function()
             require('mini.pairs').setup()
@@ -109,26 +97,18 @@ local plugins = {
     },
     {
         'echasnovski/mini.splitjoin',
-        event = "VeryLazy",
+        event = {"BufReadPre", "BufNewFile"},
         version = false,
         config = function() 
             require('mini.splitjoin').setup() 
         end,
     },
-    { 
-        'echasnovski/mini.surround', 
-        event = "VeryLazy",
+    {
+        'echasnovski/mini.surround',
+        event = {"BufReadPre", "BufNewFile"},
         version = false,
         config = function() 
             require('mini.surround').setup() 
-        end,
-    },
-    { 
-        'echasnovski/mini.map', 
-        event = "VeryLazy",
-        version = false,
-        config = function()
-            require('mini.map').setup()
         end,
     },
     -- we use cmp plugin only when in insert mode
@@ -249,6 +229,7 @@ local plugins = {
         event = { "BufReadPre", "BufNewFile" },
         config = function()
             require("gitsigns").setup()
+            require("scrollbar.handlers.gitsigns").setup()
         end,
     },
 
@@ -366,13 +347,24 @@ local plugins = {
     },
 
     -- Add a scrollbar
-    -- {
-    --     "petertriho/nvim-scrollbar",
-    --     event = {"BufNewFile", "BufReadPre"},
-    --     config = function()
-    --         require("scrollbar").setup()
-    --     end,
-    -- },
+    {
+        "petertriho/nvim-scrollbar",
+        event = {"BufNewFile", "BufReadPre"},
+        config = function()
+            require("plugins.configs.scrollbar")
+        end,
+    },
+
+    {
+        "kevinhwang91/nvim-hlslens",
+        event = {"BufNewFile", "BufReadPre"},
+        config = function()
+            -- require('hlslens').setup() is not required
+            require("scrollbar.handlers.search").setup({
+                -- hlslens config overrides
+            })
+        end,
+    },
 
     -- Add Zenmode
     {
@@ -389,15 +381,15 @@ local plugins = {
             require("todo-comments").setup()
         end,
     },
-    {
-        'phpactor/phpactor',
-        ft = 'php, blade',
-        build = 'composer install --no-dev --optimize-autoloader',
-        config = function()
-            vim.keymap.set('n', '<leader>pm', ':PhpactorContextMenu<CR>')
-            vim.keymap.set('n', '<leader>pn', ':PhpactorClassNew<CR>')
-        end,
-    },
+    -- {
+    --     'phpactor/phpactor',
+    --     ft = 'php, blade',
+    --     build = 'composer install --no-dev --optimize-autoloader',
+    --     config = function()
+    --         vim.keymap.set('n', '<leader>pm', ':PhpactorContextMenu<CR>')
+    --         vim.keymap.set('n', '<leader>pn', ':PhpactorClassNew<CR>')
+    --     end,
+    -- },
     -- {
     --     "github/copilot.vim", 
     --     event = {"BufNewFile", "BufReadPre"},
