@@ -9,7 +9,7 @@ opt.shiftwidth = 4
 opt.tabstop = 4
 opt.softtabstop = 4
 
-opt.laststatus = 3 -- global statusline
+opt.laststatus = 2 -- global statusline
 opt.showmode = false
 
 opt.timeoutlen = 200

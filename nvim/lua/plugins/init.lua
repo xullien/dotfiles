@@ -448,6 +448,10 @@ local plugins = {
     --     event = "VeryLazy",
     --     opts = {}
     -- },
+    {
+        'ggandor/leap.nvim',
+        event = "VeryLazy",
+    },
 }
 
 require("lazy").setup(plugins, require("plugins.configs.lazy"))
